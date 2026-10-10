@@ -22,7 +22,7 @@ similar conventions to the upstream project.
 ## Development setup
 
 ```bash
-git clone https://github.com/dravin/baileys.git
+git clone https://github.com/Dravintempest/dravinBailz.git
 cd baileys
 npm install
 npm run build:tsc
