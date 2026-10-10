@@ -12,10 +12,10 @@
     "wa-bot",
     "whatsapp bot"
   ],
-  "homepage": "https://github.com/dravintempest/dravinBailz",
+  "homepage": "https://github.com/Dravintempest/dravinBailz",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dravintempest/dravinBailz.git"
+    "url": "git+https://github.com/Dravintempest/dravinBailz.git"
   },
   "license": "MIT",
   "author": "Dravin",
@@ -140,7 +140,7 @@
     "node": ">=20.0.0"
   },
   "bugs": {
-    "url": "https://github.com/dravintempest/dravinBailz/issues"
+    "url": "https://github.com/Dravintempest/dravinBailz/issues"
   },
   "contributors": [
     "WhiskeySockets (original Baileys authors)"

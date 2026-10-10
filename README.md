@@ -5,7 +5,7 @@ WhatsApp Web library based on Baileys.
 ## Install
 
 ```bash
-npm install github:dravin/dravinBailz
+npm install github:Dravintempest/dravinBailz
 ```
 
 ## Auth (SQLite)
