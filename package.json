@@ -1,8 +1,8 @@
 {
   "name": "dravinBailz",
   "type": "module",
-  "version": "1.0.0",
-  "description": "dravinBailz \u2014 WhatsApp Web library (Baileys-based)",
+  "version": "1.1.0",
+  "description": "dravinBailz \u2014 WhatsApp Web library (Baileys-based, WAProto 2.3000.1049983640)",
   "keywords": [
     "dravin",
     "baileys",

@@ -28,17 +28,6 @@ await sock.sendMessage(jid, { text: 'rahasia' }, { isSecret: true })
 await sock.sendMessage(jid, { text: 'protected' }, { protected: true })
 ```
 
-## antiPeek (relay option)
-
-Mask view-once content when relaying/sending.
-
-```js
-await sock.sendMessage(jid, content, { antiPeek: true })
-// or
-await sock.relayMessage(jid, message, { antiPeek: true })
-```
-
-When set, view-once payload is replaced with text `Dravin Bailz` before send.
 
 ## buttonLocation
 
@@ -63,3 +52,7 @@ await sock.sendMessage(jid, {
   }
 }, { quoted: m })
 ```
+
+## Proto
+
+WAProto `2.3000.1049983640` (baron-baileys-v2).
