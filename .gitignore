@@ -13,4 +13,3 @@ coverage/
 *.tgz
 .yarn/
 .pnp.*
-.git
