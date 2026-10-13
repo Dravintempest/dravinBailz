@@ -223,85 +223,7 @@ await sock.sendMessage(jid, { text: 'no sync' }, { noSelfSync: true })
 
 ---
 
-## SPR — sendPrivateRelay
 
-Private relay ke **satu user** (1:1), fanout ke device dia, default `noSelfSync: true`.
-
-### v1 — content apa adanya
-
-```js
-await sock.sendPrivateRelay('628xxxx@s.whatsapp.net', { text: 'halo' })
-// alias
-await sock.spr(jid, { conversation: 'halo' })
-await sock.spr(jid, 'halo plain string')
-```
-
-### v2 — teks + mentions
-
-```js
-await sock.sendPrivateRelayV2(jid, null, {
-  text: 'halo @628yyyy',
-  mentions: ['628yyyy@s.whatsapp.net']
-})
-// alias: sock.sprV2(...)
-```
-
-Return: `{ messageId, jid, version }`.
-
----
-
-## SPBR — sendBatchPrivateRelay
-
-Batch private relay. Default max **25** target (`maxTargets`).
-
-### v1 — content sama, sequential
-
-```js
-await sock.sendBatchPrivateRelay(
-  ['628aaa@s.whatsapp.net', '628bbb@s.whatsapp.net'],
-  { text: 'broadcast privat' },
-  { delayMs: 400 }
-)
-// alias: sock.spbr(...)
-```
-
-### v2 — teks beda per target
-
-```js
-await sock.sendBatchPrivateRelayV2({
-  '628aaa@s.whatsapp.net': 'halo A',
-  '628bbb@s.whatsapp.net': 'halo B'
-}, { delayMs: 400 })
-
-// atau array
-await sock.spbrV2([
-  { jid: '628aaa@s.whatsapp.net', text: 'halo A' },
-  { jid: '628bbb@s.whatsapp.net', text: 'halo B', mentions: ['628ccc@s.whatsapp.net'] }
-])
-```
-
-### v3 — concurrent chunked
-
-```js
-await sock.sendBatchPrivateRelayV3(
-  [
-    { jid: '628aaa@s.whatsapp.net', text: 'A' },
-    { jid: '628bbb@s.whatsapp.net', content: { text: 'B' } }
-  ],
-  {
-    concurrency: 3,
-    delayBetweenChunksMs: 600,
-    maxTargets: 25
-  }
-)
-// alias: sock.spbrV3(...)
-```
-
-Return: `{ version, total, results: [{ jid, ok, messageId?, error? }] }`.
-
-**Catatan:** SPR/SPBR kirim sebagai **chat 1:1** ke tiap target, bukan group skmsg. Cocok buat DM massal terbatas — jangan di-spam (ban risk).
-
----
 
 ## relayMessage (low-level)
 
@@ -378,7 +300,6 @@ Yang bisa (dan sudah ada):
 |--------|----------|
 | `isSecret` / `protected` | Batasi device mana yang nerima |
 | `noSelfSync` | Jangan muncul di device WA lu sendiri |
-| SPR/SPBR | Kirim privat per user, bukan ke grup publik |
 
 ---
 
